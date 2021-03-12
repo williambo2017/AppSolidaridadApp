@@ -1,0 +1,2 @@
+# AppSolidaridadApp
+Task tracking app
