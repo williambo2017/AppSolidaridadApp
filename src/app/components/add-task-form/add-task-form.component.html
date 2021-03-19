@@ -1,0 +1,54 @@
+
+<div style="display: flex; align-items: center; justify-content: center; margin-top: 10px;">
+  <ion-chip>
+    <ion-label color="secondary">Add Task</ion-label>
+  </ion-chip>
+</div>
+
+
+<form [formGroup]="form" (submit)="AddTask()">
+  <ion-item>
+    <ion-label position="floating">Task name</ion-label>
+    <ion-input formControlName="name"></ion-input>
+    <ion-input type="hidden" formControlName="user" value="{{user}}"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Task status</ion-label>
+    <ion-select color="primary" interface="action-sheet" formControlName="status">
+      <ion-select-option color="primary" class="ColorNegro" value="pending">PENDING</ion-select-option>
+      <ion-select-option color="primary" class="ColorNegro" value="overdue">OVERDUE</ion-select-option>
+      <ion-select-option color="primary" class="ColorNegro" value="finished">FINISHED</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+      <ion-label>Due date</ion-label>
+      <ion-datetime displayFormat="YYYY MMMM DD" 
+                    placeholder="Select OverDue"
+                    cancelText='Cancelar'
+                    formControlName="due_date"
+      ></ion-datetime>
+  </ion-item>
+
+  <ion-item >
+    <ion-label position="floating">Task priority</ion-label>
+    <ion-input type="number" formControlName="priority"></ion-input>
+  </ion-item>
+
+    <ion-button Expand="full" type="submit">Save</ion-button>
+
+</form>
+
+
+<!-- "pk": {
+  "type": "string",
+  "required": false,
+  "read_only": true,
+  "label": "Pk"
+},
+"user": {
+  "type": "field",
+  "required": true,
+  "read_only": false,
+  "label": "User"
+}, -->

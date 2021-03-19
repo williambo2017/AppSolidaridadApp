@@ -1,0 +1,69 @@
+<app-header Title="User Profile"></app-header>
+
+
+
+
+<div>
+    <form action="">
+
+        <ion-item>
+            <ion-icon slot="start" name="person-circle-outline"></ion-icon>
+            <ion-label *ngIf="!busername">{{DataUSer.username}}</ion-label>
+            <ion-label *ngIf="busername" position="floating">Username</ion-label>
+            <ion-input *ngIf="busername" name="username" [(ngModel)]="username"></ion-input>
+            <ion-icon *ngIf="!busername" slot="end" name="pencil-outline" (click)="busername = !busername"></ion-icon>
+            <ion-icon *ngIf="busername" slot="end" name="save-outline"
+                (click)="update('username',username);busername = !busername">
+            </ion-icon>
+        </ion-item>
+
+        <ion-item>
+            <ion-icon slot="start" name="pricetags-outline"></ion-icon>
+            <ion-label *ngIf="!bfirsName">{{DataUSer.first_name}}</ion-label>
+            <ion-label *ngIf="bfirsName" position="floating">First name</ion-label>
+            <ion-input *ngIf="bfirsName" name="first_name" [(ngModel)]="firsName"></ion-input>
+            <ion-icon *ngIf="!bfirsName" slot="end" name="pencil-outline" (click)="bfirsName = !bfirsName"></ion-icon>
+            <ion-icon *ngIf="bfirsName" slot="end" name="save-outline" (click)="update('first_name',firsName);bfirsName = !bfirsName">
+            </ion-icon>
+
+        </ion-item>
+        <ion-item>
+            <ion-icon slot="start" name="pricetags-outline"></ion-icon>
+            <ion-label *ngIf="!blastName">{{DataUSer.last_name}}</ion-label>
+            <ion-label *ngIf="blastName" position="floating">Last name</ion-label>
+            <ion-input *ngIf="blastName" name="lastName" [(ngModel)]="lastName"></ion-input>
+            <ion-icon *ngIf="!blastName" slot="end" name="pencil-outline" (click)="blastName = !blastName "></ion-icon>
+            <ion-icon *ngIf="blastName" slot="end" name="save-outline" (click)="update('last_name',lastName);bfirsName = !bfirsName">
+            </ion-icon>
+
+        </ion-item>
+
+        <ion-item>
+            <ion-icon slot="start" name="mail-outline"></ion-icon>
+            <ion-label *ngIf="!bemail">{{DataUSer.email}}</ion-label>
+            <ion-label *ngIf="bemail" position="floating">email</ion-label>
+            <ion-input *ngIf="bemail" name="email" [(ngModel)]="email"></ion-input>
+            <ion-icon *ngIf="!bemail" slot="end" name="pencil-outline" (click)="bemail = !bemail "></ion-icon>
+            <ion-icon *ngIf="bemail" slot="end" name="save-outline" (click)="update('email',email);bfirsName = !bfirsName">
+            </ion-icon>
+        </ion-item>
+
+
+        <ion-item>
+            <ion-icon slot="start" name="call-outline"></ion-icon>
+            <ion-label *ngIf="!bphone">{{DataUSer.phone_number}}</ion-label>
+            <ion-label *ngIf="bphone" position="floating">Phone number</ion-label>
+            <ion-input *ngIf="bphone" name="phone" [(ngModel)]="phone"></ion-input>
+            <ion-icon *ngIf="!bphone" slot="end" name="pencil-outline" (click)="bphone = !bphone "></ion-icon>
+            <ion-icon *ngIf="bphone" slot="end" name="save-outline" (click)="update('phone_number',phone);bfirsName = !bfirsName">
+            </ion-icon>
+        </ion-item>
+
+
+
+    </form>
+</div>
+
+
+
+<app-tabs></app-tabs>

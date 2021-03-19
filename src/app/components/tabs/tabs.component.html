@@ -1,0 +1,35 @@
+
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+
+    <ion-tab-button (click)="Navegar('/profile')">
+      <ion-icon name="person-circle"></ion-icon>
+      <ion-label>Profile</ion-label>
+    </ion-tab-button>
+
+
+    <ion-tab-button (click)="Navegar('/task-pending')">
+      <ion-icon name="list-outline"></ion-icon>
+      <ion-label>Pending</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button (click)="Navegar('/task-overdue')">
+      <ion-icon name="warning-outline"></ion-icon>
+      <ion-label>Overdue</ion-label>
+      <!-- <ion-badge>100</ion-badge> -->
+    </ion-tab-button>
+
+    <ion-tab-button (click)="Navegar('/task-finished')">
+      <ion-icon name="checkmark-circle-outline"></ion-icon>
+      <ion-label>Finished</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button (click)="Navegar('/login')">
+      <ion-icon name="exit-outline"></ion-icon>
+      <ion-label>Log out</ion-label>
+    </ion-tab-button>
+
+
+
+  </ion-tab-bar>
+</ion-tabs>

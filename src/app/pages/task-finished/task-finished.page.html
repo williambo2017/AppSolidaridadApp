@@ -1,0 +1,47 @@
+
+
+
+<app-header Title="Finished tasks" (Recargar)="Recargar()"></app-header>
+
+<div style="display: flex; align-items: center; justify-content: center; margin-top: 10px;">
+  <ion-chip>
+    <ion-label *ngIf="!order" color="secondary" (click)="Order()" >order ASC</ion-label>
+    <ion-label *ngIf="order" color="secondary" (click)="Order()" >order Des</ion-label>
+  </ion-chip>
+</div>
+<ion-content>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="OpenForm()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+
+  <ion-list>
+      <app-card *ngFor="let item of finishTaks" 
+        [taksId]="item.pk"
+        [Title]="item.name"
+        [userId]="getName(item.user)"
+        [status]="item.status"
+        [overdue]="item.due_date"
+        [priority]="item.priority"
+        (Recargar)="getAllTask($event)">
+      </app-card>
+  </ion-list>
+
+  <div class="alert" *ngIf="finishTaks.length == 0">
+    <ion-label>Empty list</ion-label>
+ </div>
+
+
+</ion-content>
+
+
+
+
+
+<ion-footer>
+  <ion-toolbar>
+    <app-tabs></app-tabs>
+  </ion-toolbar>
+</ion-footer>

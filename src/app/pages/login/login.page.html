@@ -1,0 +1,32 @@
+
+<div class="Body">
+  <div class="form">
+    <h5 class="title">My task</h5>
+    <form [formGroup]="form" (submit)="login()"  autocomplete="off">
+
+      <ion-item>
+        <ion-label position="floating">User name</ion-label>
+        <ion-input formControlName="username" autocomplete="off"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input formControlName="email"  ></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input type="password" formControlName="password" autocomplete="off"></ion-input>
+      </ion-item>
+
+      <ion-button type="submit" expand="full" [disabled]="form.invalid">log in</ion-button>
+    </form>
+  </div>
+
+  <div>
+    <ion-button expand="full" routerLink="/register">Register</ion-button>
+   <!--  <ion-button expand="full" routerLink="/recover">Recover password</ion-button> -->
+  </div>
+
+
+</div>

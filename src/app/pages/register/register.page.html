@@ -1,0 +1,36 @@
+
+<div class="Body">
+    <div class="form">
+      <h5 class="title">My task</h5>
+      <form [formGroup]="form" (submit)="Register()" >
+  
+        <ion-item>
+          <ion-label position="floating">User name</ion-label>
+          <ion-input formControlName="username"></ion-input>
+        </ion-item>
+  
+        <ion-item>
+          <ion-label position="floating">Email</ion-label>
+          <ion-input formControlName="email"></ion-input>
+        </ion-item>
+  
+        <ion-item>
+          <ion-label position="floating">Password</ion-label>
+          <ion-input type="password" formControlName="password1"  minlength="8" ></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label position="floating">Repeat Password </ion-label>
+            <ion-input type="password" formControlName="password2"></ion-input>
+          </ion-item>
+  
+        <ion-button type="submit" expand="full" [disabled]="form.invalid">Register</ion-button>
+      </form>
+    </div>
+  
+    <div>
+      <ion-button expand="full" routerLink="/login">Cancel</ion-button>
+    </div>
+  
+  
+  </div>

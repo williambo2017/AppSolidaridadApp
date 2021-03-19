@@ -1,5 +1,7 @@
 {
   "name": "MyTasks",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

@@ -1,0 +1,52 @@
+<ion-card>
+  <ion-card-header>
+    <ion-card-subtitle>{{userId}}</ion-card-subtitle>
+    <ion-card-title>{{Title}}</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+
+    <ion-item>
+      <ion-label>Status: {{status}}</ion-label>
+
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Overdue: {{overdue | date:' MMMM dd YYYY '}}</ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Priority: {{priority}}</ion-label>
+    </ion-item>
+
+
+    <ion-item *ngIf="status == 'finished'">
+      <ion-button color="danger" shape="round"  (click)="DeleteTask(taksId)">
+        <ion-icon name="trash"></ion-icon>
+        <ion-label>Delete</ion-label>
+      </ion-button>
+
+      <ion-button color="warning" shape="round" (click)="Overduetask(taksId)">
+        <ion-icon slot="start" name="warning-outline"></ion-icon>
+        <ion-label>Overdue</ion-label>
+      </ion-button>
+
+    </ion-item>
+
+    <ion-item *ngIf="status !='finished'">
+      <ion-button color="secondary" shape="round" (click)="Finishtask(taksId)">
+        <ion-icon slot="start" name="checkmark-done-outline"></ion-icon>
+        <ion-label>complete</ion-label>
+      </ion-button>
+
+      <ion-button color="danger" shape="round" (click)="DeleteTask(taksId)">
+        <ion-icon name="trash"></ion-icon>
+        <ion-label>Delete</ion-label>
+      </ion-button>
+
+    </ion-item>
+
+
+    
+
+  </ion-card-content>
+</ion-card>
